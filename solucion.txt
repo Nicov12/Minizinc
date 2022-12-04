@@ -1,0 +1,14 @@
+var int: x; %Pos x
+var int: y; %Pos y
+%Restricciones triviales
+constraint x >= 0;
+constraint y >= 0;
+%Restricciones
+constraint x <= 3;
+constraint y <= 9;
+constraint abs(1 - x) + abs(9 - y) > 0;
+constraint abs(3 - x) + abs(9 - y) > 0;
+constraint abs(2 - x) + abs(7 - y) > 0;
+constraint abs(1 - x) + abs(4 - y) > 0;
+solve minimize abs(1 - x) + abs(9 - y) + abs(3 - x) + abs(9 - y) + abs(2 - x) + abs(7 - y) + abs(1 - x) + abs(4 - y);
+output["Pos x: ", show(x), " Pos y: ", show(y)];
